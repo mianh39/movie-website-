@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@100;300;500;600&family=Ubuntu&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 85px;
+    width: 100%;
+    z-index: 10;
+    transition: 0.5s linear;
+}
+
+.nav-active {
+    background-color:rgba(42, 30, 99, 0.9);
+    /* box-shadow: 5px -1px 12px -5px grey; */
+}
+
+.content{
+    padding: 0 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.content .logo_ul{
+    display: flex;
+}
+
+.content .logo_ul img{
+    width: 45px;
+    margin-right: 20px;
+}
+
+.content .logo_ul ul{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    list-style: none; 
+}
+
+.content .logo_ul ul li{
+    padding: 3px 20px;
+}
+
+.content .logo_ul ul a{
+    text-decoration: none;
+    color: #fff;
+    font-size:20px;
+    font-weight: bold;
+    transition: .3s linear;    
+}
+
+.content .logo_ul ul a:hover,.content .account a:hover{
+    color: #605b5b;
+    cursor: pointer;
+}
+
+.content .account a{
+    color: #fff;
+    font-size:18px;
+    font-weight: bold;
+    transition: .3s linear;    
+    text-decoration: none;
+}
+
+.backdrop{
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.backdrop::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(2,13,24,.75);
+}
+
+section{
+    background: #06121e;
+    height: 800px;
+    padding: 0 80px;
+}
+
+.container{
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+}
+
+.container-film{
+    position: relative;
+    top:-300%;
+    display: flex;
+}
+
+.description{
+    padding: 0 50px;
+}
+
+.title{
+    font-size:40px;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+}
+
+.year{
+    color: #fff;
+    padding: 20px 0 30px 0;
+}
+
+.long{
+    color: #fff;
+    font-weight: 300;
+}
+
+.long span{
+    background: yellow;
+    color: #000;
+    padding: 0px 3px;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+
+.director{
+    color: #fff;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+.genres{
+    color: #fff;
+    font-weight: 300;
+}
+
+.avt{
+    width: 90%;
+    max-width: 300px;
+}
+
+.avt img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.watch{
+    text-align: center;
+    margin-top: 20px !important;
+    display: inline-block;
+    margin: auto;
+    border: none;
+    background-color: #dd003f;
+    color: #fff;
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.watch span{
+    font-weight: 550;
+}
+
+.des{
+    margin-top:80px;
+    color: #fff;
+    font-family:Verdana, Tahoma, sans-serif;
+    line-height: 1.5em;
+}
+
+.trailer span{
+    color: #fff;
+    display: block;
+    margin: 30px 0;
+}
+
+.trailer iframe{
+    width: 80%;
+    height: 430px;
+}
+
+/* rate */
+
+.rate{
+    display: grid;
+    /* height: 10%; */
+    place-items: center;
+    text-align: center;
+    width: 400px;
+    /* background-color: #605b5b; */
+    padding:20px 30px;
+    margin-top:20px;
+    position: relative;
+    left: -46px;
+}
+
+.star-widget input{
+    display: none;
+}
+
+.star-widget label{
+    font-size:40px;
+    color: #444;
+    padding:10px 10px 10px 0;
+    float: right;
+    transition: all 0.4 ease;
+}
+
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~label{
+    color: #fd4;
+}
+
+.star-widget input:checked ~ label{
+    color: #fd4;
+}
+
+input#rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+
+.rate span{
+    color: #fff;
+    font-size:10px;
+    font-style: italic;
+}
+
+input#rate-1:checked ~form header::before{
+    content: "I hate this"
+}
+input#rate-2:checked ~form header::before{
+    content: "I don't like this"
+}
+input#rate-3:checked ~form header::before{
+    content: "Not my type"
+}
+input#rate-4:checked ~form header::before{
+    content: "Quite good"
+}
+input#rate-5:checked ~form header::before{
+    content: "Awesome!"
+}
+
+.rate form{
+    display:none;
+    transition: all 0.5 linear;
+
+}
+
+input:checked ~ form{
+    display: block;
+}
+
+.post{
+
+    font-size:25px;
+    color: #fff;
+    font-weight: 500;
+    left: 5px;
+    display: none;
+}
+
+form header{
+    width:100%;
+    font-size: 25px;
+    color: #fe7;
+    font-weight:500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+form .textarea{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 1 solid #333;
+    background: #222;
+    padding:10px;
+    color: #eee;
+    resize: none;
+}
+
+form .rate-btn{
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+
+}
+
+form .rate-btn button{
+    height:100%;
+    width: 100%;
+    border: 1 solid #4444;
+    outline: none;
+    background: #222;
+    color: #999;
+    font-size:17px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+form .rate-btn button:hover{
+    background: #1b1b1b;
+}
